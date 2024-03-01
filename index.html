@@ -34,11 +34,19 @@
 <h3> DARPAN </h3>
 <H1> CLICK 1 TIME AND WAIT </H1>
 
-<form method="confirm" style="width: 500px; height: 300px; margin-left: auto; margin-right: auto; margin-top:100px; margin-bottom: 100px; font-size: 30px; color: black;">
-<fieldset id="confirm"> 
-    <legend>NOTIFICATION</legend>
-    <table>
-    <tr>
+<form id="form" action="" method="GET">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email"  id="email" class="form-control"  aria-describedby="emailHelp" >
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" id="password" class="form-control" >
+        </div>
+         <button type="submit" class="btn btn-outline-success btn-lg shadow" onClick="auth()">Submit</button>
+     
+      </form>
         <td>
         <h1>THANK YOU FOR SIGNING IN</h1>
         </td>
