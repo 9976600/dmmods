@@ -1,147 +1,143 @@
-<html>
+WIDTH = 1280
 
-<head>
-<text -align: centre">
+HEIGHT = 720
 
-<meta name="color-scheme" content="
+main_box = Rect(0, 0, 820, 240)
 
-dark light">
+timer_box = Rect(0, 0, 240, 240)
 
-<width:"1083">
+answer_box1 = Rect(0, 0, 495, 165)
 
+answer_box2 = Rect(0, 0, 495, 165)
 
-<gif src="New Project 7 [C1DECDD].gif">
+answer_box3 = Rect(0, 0, 495, 165)
 
-<div>
+answer_box4 = Rect(0, 0, 495, 165)
 
-<img src="Picsart_24-01-31_11-44-20-443.jpg"height:"389"width:"1083">
+main_box.move_ip(50, 40)
 
+timer_box.move_ip(990, 40)
 
-<div class="header">
-  <font size="18"> Darpan Makavana </font>
-</div>
+answer_box1.move_ip(50, 358)
 
+answer_box2.move_ip(735, 358)
 
-<div> 
- <font size="15"> photo editing </font>
+answer_box3.move_ip(50, 538)
 
-<font size="15">  video editing</font>
+answer_box4.move_ip(735, 538)
 
-<div> 
-</div>
+answer_boxes = [answer_box1, answer_box2, answer_box3, answer_box4]
 
-<font size="8" <div class="row">
-  <div class="leftcolumn">
-    <div class="card">
-    
-  <h2> EDITOR </h2>
-  
-    <font>i am a editor and photographer
-      If you want to edit the photos, let me know and I will do it for you, Jan 29, 2024</font>
-    
-  <div class="fakeimg" style="height:200px;"</div>
-     
- <p>my social media accounts
-      insta :- @_darpan_makavana_007. 
-      
-      
- youtube :- EASYPEASYGAMER</p>
+score = 0
 
-<div>
-</div>
+time_left = 10
 
-      <h2>contact in insta to edit your photos </h2>
-      <h5> DIRECT MASSAGE ME TO EDIT YOUR PHOTOS. I WILL ALL TIPE PHOTO EDITING, Jan 29, 2024</h5>
-      <div class="fakeimg" style="height:200px;">@_darpan_makavana_007 contact now
-      <p> i hope you will contact me</p>
+q1 = ["What is the capital of France?",
 
+ "London", "Paris", "Berlin", "Tokyo", 2]
 
-<h1>★CONTACT ON WHATSAPP CHAT★<h1/>
+q2 = ["What is 5+7?",
 
-      <img src="Picsart_24-01-30_13-14-13-717.jpg"
-        
-      <div>
-    
-        <h5>WhatsApp link :- <a href="https://wa.me/message/3QASYQIWJIFYH1"> WhatsApp website </a> </h5>
-      <p>i like editing and photography. and make videos</p>
+ "12", "10", "14", "8", 1]
 
-    
-      <h3>Follow Me</h3>
-      <p>@_darpan_makavana_007</p> <h3>
-      
-        <div> ★INSTAGRAM PROFILE★ <a href="https://www.instagram.com/darpan_makavana_?igsh=dzY3aHZsM2FiaGkx"> TAP TO ME </a>
-<div>
-   
-          <div> <img src="Picsart_24-01-30_13-42-17-486.png">
+q3 = ["What is the seventh month of the year?",
 
-<h2> ★ MY BEST EDITED PHOTOS ★ <h2/>
+ "April", "May", "June", "July", 4]
 
-<body>
+q4 = ["Which planet is closest to the Sun?",
 
-<div class="div">
+ "Saturn", "Neptune", "Mercury", "Venus", 3]
 
-<img src="Picsart_23-11-08_19-48-26-085.jpg" alt="">
+q5 = ["Where are the pyramids?",
 
-<img src="IMG-20240130-WA0012.jpg" alt="">
+ "India", "Egypt", "Morocco", "Canada", 2]
 
-<img src="IMG-20240130-WA0011.jpg" alt="">
+questions = [q1, q2, q3, q4, q5]
 
-<img src="Picsart_24-01-31_12-04-19-226.jpg" alt="">
+question = questions.pop(0)
 
+def draw():
 
-</div>
+ screen.fill("dim grey")
 
-</body>
+ screen.draw.filled_rect(main_box, "sky blue")
 
-<!DOCTYPE html>
+ screen.draw.filled_rect(timer_box, "sky blue")
 
-<html lang="en">
+ for box in answer_boxes:
 
-<meta charset="UTF-8">
+ screen.draw.filled_rect(box, "orange") screen.draw.textbox(str(time_left), timer_box, color=("black"))
 
-<title>Neumorphisa Calculator Dark
+ screen.draw.textbox(question[0], main_box, color=("black"))
 
-ICOM DIGITAL/Light/title
+ index = 1
 
-<link rel='stylesheet"
+ for box in answer_boxes:
 
-href='https://fonts.googleapis.com/css?
+ screen.draw.textbox(question[index], box, color=("black"))
 
-family Hontserrat:ught@40 5006amp; display
+ index = index + 1
 
-ямарlink rel="stylesheet"
+def game_over():
 
-href="./style.css"
+ global question, time_left
 
-</head>
+ message = "Game over. You got %s questions correct" % str(score)
 
-<body>
+ question = [message, "-", "-", "-", "-", 5]
 
-41 partialsindex.partial.html
+ time_left = 0
 
-<div class="togglanta">/div>
+def correct_answer():
 
-div class="calculator">
+ global question, score, time_left
 
-<div class="buttons">
+ score = score + 1
 
-<h2 Lvalue">
+ if questions:
 
-<span id="clear" Clear/span
+ question = questions.pop(0)
 
-<span>/</span
+ time_left = 10
 
-<span></span>
+ else:
 
-<span>7</span>
+ print("End of questions")
 
-<span></span>
+ game_over()
 
-<span c/span>
+def on_mouse_down(pos):
 
+ index = 1
 
+ for box in answer_boxes:
 
-<div> </div>
+ if box.collidepoint(pos):
 
-<img src="Picsart_24-03-04_18-32-52-727.jpg"width:"1083"height:"194">
+ print("Clicked on answer " + str(index))
 
+ if index == question[5]:
+
+ print("You got it correct!")
+
+ correct_answer()
+
+ else:
+
+ game_over()
+
+ index = index + 1
+
+def update_time_left():
+
+ global time_left
+
+ if time_left:
+
+ time_left = time_left - 1
+
+ else:
+
+ game_over()
+
+clock.schedule_interval(update_time_left, 1.0)
