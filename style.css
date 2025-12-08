@@ -1,0 +1,285 @@
+/* --- Variables & Global Reset --- */
+:root {
+    --primary-color: #e67e22; /* Vibrant Orange/Terracotta for Mandap Theme */
+    --secondary-color: #2c3e50; /* Dark Blue for Text/Background Contrast */
+    --light-bg: #f4f4f4;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Unicode MS', sans-serif; /* Supports Gujarati font */
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Header & Nav --- */
+header {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-quote {
+    background-color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* --- Utility Buttons --- */
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d35400; /* Darker orange */
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: #1e2b38;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-mandap-bg.jpg') no-repeat center center/cover; /* Add a relevant background image */
+    background-color: #333; /* Fallback */
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 5%;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Services Section --- */
+.services-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.services-section h2, .gallery-section h2, .contact-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card i {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* --- Gallery Section --- */
+.gallery-section {
+    background-color: white;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.gallery-placeholder {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.photo-box {
+    height: 180px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    border-radius: 5px;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: white;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #111;
+    padding: 20px 5%;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background-color: var(--secondary-color);
+        z-index: 10;
+        padding: 15px 0;
+        border-top: 1px solid #3c546b;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .menu-toggle {
+        display: block; 
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+  }
+                                 
