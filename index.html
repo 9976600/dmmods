@@ -1,28 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic AI Chatbot</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* --- Variables & Global Reset --- */
+:root {
+    --primary-color: #007bff; /* Blue for branding */
+    --secondary-color: #28a745; /* Green for user messages */
+    --background-color: #f8f9fa; /* Light background */
+    --chat-bg: #ffffff; /* Chat window background */
+    --ai-color: #e9ecef; /* AI message background */
+    --font-color: #343a40; 
+}
 
-    <div class="chat-container">
-        <h1>AI Assistant (Demo)</h1>
-        
-        <div class="chat-box" id="chat-box">
-            <div class="message ai-message">
-                Hello! I am a basic AI assistant. How can I help you today?
-            </div>
-        </div>
-        
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--font-color);
+}
+
+.app-container {
+    width: 95%;
+    max-width: 600px;
+    height: 80vh; /* Fixed height for a proper design */
+    background-color: var(--chat-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Header Design --- */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.chat-header h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary-color); /* Online status */
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+/* --- Chat Window --- */
+.chat-window {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--background-color);
+}
+
+/* Scrollbar styling for better aesthetics */
+.chat-window::-webkit-scrollbar { width: 8px; }
+.chat-window::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+
+/* --- Message Bubbles --- */
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 85%;
+}
+
+.text-content {
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.4;
+    font-size: 0.95em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-message {
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.user-message .text-content {
+    background-color: var(--secondary-color);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.ai-message {
+    margin-right: auto;
+    align-items: flex-start;
+}
+
+.ai-message .text-content {
+    background-color: var(--ai-color);
+    color: var(--font-color);
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+}
+
+.ai-message i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-right: 8px;
+    padding-top: 5px;
+}
+
+/* --- Input Area --- */
+.input-area {
+    display: flex;
+    padding: 10px 15px;
+    border-top: 1px solid #e9ecef;
+    background-color: var(--chat-bg);
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#user-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.input-area button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.input-area button:hover {
+    background-color: #0056b3;
+}
+
+.input-area button:active {
+    transform: scale(0.95);
+}
+
+/* --- Mobile optimization --- */
+@media (max-width: 600px) {
+    .app-container {
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+    }
+}
