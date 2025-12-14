@@ -1,99 +1,57 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>શ્રી ગણેશ મંડપ સર્વિસ - ઇવેન્ટ ડેકોરેશન</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <title>रंगोली क्ले आर्ट्स - रचनात्मकता की दुनिया</title>
+    <link rel="stylesheet" href="styles.css"> </head>
 <body>
-
     <header>
-        <div class="logo">શ્રી ગણેશ <span class="highlight">મંડપ</span></div>
+        <div class="logo">रंगोली क्ले आर्ट्स</div>
         <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">હોમ</a></li>
-                <li><a href="#services">સર્વિસ</a></li>
-                <li><a href="#gallery">ગેલેરી</a></li>
-                <li><a href="#contact">સંપર્ક</a></li>
-                <li><a href="#contact" class="btn-quote">ક્વોટ મેળવો</a></li>
-            </ul>
+            <a href="#home">होम</a>
+            <a href="#gallery">गैलरी</a>
+            <a href="#about">हमारे बारे में</a>
+            <a href="#contact">ऑर्डर करें</a>
         </nav>
-        <button class="menu-toggle" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </button>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>તમારા દરેક પ્રસંગને ભવ્ય બનાવો</h1>
-            <p>લગ્ન, રિસેપ્શન, પાર્ટી અને કોર્પોરેટ ઇવેન્ટ્સ માટે આધુનિક ડેકોરેશન અને મંડપ સર્વિસ.</p>
-            <a href="#services" class="cta-button">અમારી સર્વિસ જુઓ <i class="fas fa-arrow-down"></i></a>
-        </div>
-    </section>
+    <main>
+        <section id="hero">
+            <h1>मिट्टी को कला का रूप!</h1>
+            <p>हाथों से बनी अद्वितीय (Unique) क्ले कलाकृतियाँ।</p>
+            <a href="#gallery" class="btn">गैलरी देखें</a>
+        </section>
 
-    <section id="services" class="services-section">
-        <h2>અમારી મુખ્ય સર્વિસ</h2>
-        <div class="card-grid">
-            
-            <div class="service-card">
-                <i class="fas fa-umbrella-beach"></i>
-                <h3>મંડપ અને ડોમ</h3>
-                <p>ભવ્ય અને આધુનિક ડિઝાઇન્સમાં વિવિધ કદના વોટરપ્રૂફ મંડપ.</p>
+        <section id="gallery">
+            <h2>हमारी कलाकृतियाँ</h2>
+            <div class="art-container">
+                <div class="art-item">
+                    <img src="placeholder_1.jpg" alt="क्ले पॉट"> 
+                    <h3>प्यारा पॉट</h3>
+                </div>
+                <div class="art-item">
+                    <img src="placeholder_2.jpg" alt="क्ले मूर्ति"> 
+                    <h3>छोटी मूर्ति</h3>
+                </div>
+                <div class="art-item">
+                    <img src="placeholder_3.jpg" alt="क्ले ज्वेलरी"> 
+                    <h3>हस्तनिर्मित ज्वेलरी</h3>
+                </div>
             </div>
+            <p>अपनी पसंद के अनुसार कस्टमाइज़्ड ऑर्डर के लिए संपर्क करें!</p>
+        </section>
 
-            <div class="service-card">
-                <i class="fas fa-flower"></i>
-                <h3>ફૂલ ડેકોરેશન</h3>
-                <p>ફ્રેશ અને આર્ટિફિશિયલ ફૂલોથી સુંદર સ્ટેજ અને એન્ટ્રન્સ ડેકોરેશન.</p>
-            </div>
-
-            <div class="service-card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>લાઇટિંગ અને સાઉન્ડ</h3>
-                <p>ઇવેન્ટની થીમ પ્રમાણે પ્રોફેશનલ લાઇટિંગ અને સાઉન્ડ સિસ્ટમ.</p>
-            </div>
-            
-            <div class="service-card">
-                <i class="fas fa-chair"></i>
-                <h3>ફર્નિચર અને અન્ય વ્યવસ્થા</h3>
-                <p>VIP ચેર, સોફા, ડાઇનિંગ ટેબલ અને અન્ય તમામ જરૂરી ફર્નિચર.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="gallery-section">
-        <h2>અમારા કામની ઝલક (ગેલેરી)</h2>
-        <div class="gallery-placeholder">
-            [અહીં તમારા બેસ્ટ મંડપ/ડેકોરેશન ફોટાઓનું લેઆઉટ આવશે]
-            <div class="photo-box">ફોટો 1</div>
-            <div class="photo-box">ફોટો 2</div>
-            <div class="photo-box">ફોટો 3</div>
-        </div>
-        <a href="#" class="cta-button secondary-btn">વધુ ફોટા જુઓ</a>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <h2>અમારો સંપર્ક કરો</h2>
-        <p>તમારી ઇવેન્ટની તારીખ અને જરૂરિયાતો જણાવીને આજે જ શ્રેષ્ઠ ક્વોટ મેળવો!</p>
-        <div class="contact-info">
-            <p><i class="fas fa-phone"></i> ફોન: +91 98765 43210</p>
-            <p><i class="fas fa-envelope"></i> ઇમેઇલ: info@shriganeshmandap.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> સરનામું: અમદાવાદ, ગુજરાત.</p>
-        </div>
-        <form class="contact-form">
-            <input type="text" placeholder="તમારું નામ" required>
-            <input type="tel" placeholder="મોબાઇલ નંબર" required>
-            <textarea placeholder="ઇવેન્ટની વિગતો અને તારીખ" required></textarea>
-            <button type="submit" class="cta-button">ક્વોટ માટે વિનંતી મોકલો</button>
-        </form>
-    </section>
+        <section id="contact">
+            <h2>हमसे संपर्क करें</h2>
+            <p>हमें ईमेल करें: example@clayart.com</p>
+            <p>फ़ोन करें: +91-9876543210</p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 શ્રી ગણેશ મંડપ સર્વિસ. સર્વ હક અનામત.</p>
+        <p>&copy; 2025 Rangoli Clay Arts. कला और शिल्प।</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
+
